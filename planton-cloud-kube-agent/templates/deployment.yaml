@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: planton-cloud-kube-agent
+  labels:
+    app: planton-cloud-kube-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: planton-cloud-kube-agent
+  template:
+    metadata:
+      labels:
+        app: planton-cloud-kube-agent
+    spec:
+      containers:
+      - name: planton-cloud-kube-agent
+        image: nginx
+        ports:
+        - containerPort: 80
