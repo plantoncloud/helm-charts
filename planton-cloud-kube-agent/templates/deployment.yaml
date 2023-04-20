@@ -2,20 +2,34 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: planton-cloud-kube-agent
+  namespace: {{ .Release.Namespace }}
   labels:
     app: planton-cloud-kube-agent
+    company: {{ .Values.company }}
+    hosting-env-id: {{ .Values.hostingEnvId }}
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: planton-cloud-kube-agent
+      company: {{ .Values.company }}
+      hosting-env-id: {{ .Values.hostingEnvId }}
   template:
     metadata:
       labels:
         app: planton-cloud-kube-agent
+        company: {{ .Values.company }}
+        hosting-env-id: {{ .Values.hostingEnvId }}
     spec:
       containers:
       - name: planton-cloud-kube-agent
-        image: nginx
+        image: {{ .Values.image }}
         ports:
-        - containerPort: 80
+        - containerPort: 8080
+        env:
+          - name: PLANTON_CLOUD_KUBE_AGENT_CLIENT_ID
+            value: {{ .Values.clientId }}
+          - name: PLANTON_CLOUD_KUBE_AGENT_CLIENT_SECRET
+            value: {{ .Values.clientSecret }}
+          - name: PLANTON_CLOUD_KUBE_AGENT_HOSTING_ENV_ID
+            value: {{ .Values.hostingEnvId }}

@@ -1,3 +1,5 @@
-# clientId: <planton-cloud-service-client-id>
-# clientSecret: <planton-cloud-service-client-secret>
-# hostingEnvId: <planton-cloud-hosting-env-id>
+image: us-central1-docker.pkg.dev/planton-shared-services-jx/afs-planton-pos-uc1-ext-docker/gitlab.com/plantoncode/planton/pcs/lib/mod/planton-cloud-kube-agent:1458aeb6
+company: example-planton-cloud-company-id
+hostingEnvId: example-planton-cloud-hosting-env-id
+clientId: example-planton-cloud-service-client-id
+clientSecret: example-planton-cloud-service-client-secret>
