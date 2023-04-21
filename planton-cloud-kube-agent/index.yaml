@@ -9,5 +9,5 @@ entries:
       type: application
       urls:
         - https://github.com/plantoncloud/helm-charts/releases/download/v0.0.2/planton-cloud-kube-agent-v0.0.2.tgz
-      version: v0.0.1
+      version: v0.0.2
 generated: "2022-12-01T15:41:46.96673-07:00"
