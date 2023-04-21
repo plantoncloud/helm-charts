@@ -30,6 +30,9 @@ spec:
           - name: PLANTON_CLOUD_KUBE_AGENT_CLIENT_ID
             value: {{ .Values.clientId }}
           - name: PLANTON_CLOUD_KUBE_AGENT_CLIENT_SECRET
-            value: {{ .Values.clientSecret }}
+            valueFrom:
+              secretKeyRef:
+                name: planton-cloud-machine-account
+                key: client-secret
           - name: PLANTON_CLOUD_KUBE_AGENT_HOSTING_ENV_ID
             value: {{ .Values.hostingEnvId }}
