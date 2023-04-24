@@ -36,3 +36,13 @@ spec:
                 key: client-secret
           - name: PLANTON_CLOUD_KUBE_AGENT_HOSTING_ENV_ID
             value: {{ .Values.hostingEnvId }}
+          - name: PLANTON_CLOUD_SERVICE_API_ENDPOINT
+            value: {{ .Values.plantonCloudServiceApiEndpoint }}
+          - name: OPEN_COST_API_ENDPOINT
+            value: {{ .Values.openCostApiEndpoint }}
+          - name: OPEN_COST_POLLING_INTERVAL_SECONDS
+            value: {{ .Values.openCostPollingIntervalSeconds }}
+          - name: TOKEN_EXPIRATION_BUFFER_MINUTES
+            value: {{ .Values.tokenExpirationBufferMinutes }}
+          - name: TOKEN_EXPIRATION_CHECK_INTERVAL_SECONDS
+            value: {{ .Values.tokenExpirationCheckIntervalSeconds }}
