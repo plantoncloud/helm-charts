@@ -41,8 +41,8 @@ spec:
           - name: OPEN_COST_API_ENDPOINT
             value: {{ .Values.openCostApiEndpoint }}
           - name: OPEN_COST_POLLING_INTERVAL_SECONDS
-            value: {{ .Values.openCostPollingIntervalSeconds }}
+            value: {{ .Values.openCostPollingIntervalSeconds | quote }}
           - name: TOKEN_EXPIRATION_BUFFER_MINUTES
-            value: {{ .Values.tokenExpirationBufferMinutes }}
+            value: {{ .Values.tokenExpirationBufferMinutes | quote }}
           - name: TOKEN_EXPIRATION_CHECK_INTERVAL_SECONDS
-            value: {{ .Values.tokenExpirationCheckIntervalSeconds }}
+            value: {{ .Values.tokenExpirationCheckIntervalSeconds | quote }}
