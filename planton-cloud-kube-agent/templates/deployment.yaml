@@ -46,3 +46,5 @@ spec:
             value: {{ .Values.tokenExpirationBufferMinutes | quote }}
           - name: TOKEN_EXPIRATION_CHECK_INTERVAL_SECONDS
             value: {{ .Values.tokenExpirationCheckIntervalSeconds | quote }}
+          - name: LOG_LEVEL
+            value: {{ .Values.logLevel }}

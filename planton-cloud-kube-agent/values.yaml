@@ -1,10 +1,11 @@
-image: us-central1-docker.pkg.dev/planton-shared-services-jx/afs-planton-pos-uc1-ext-docker/gitlab.com/plantoncode/planton/pcs/lib/mod/planton-cloud-kube-agent:7c81bdb8
+image: us-central1-docker.pkg.dev/planton-shared-services-jx/afs-planton-pos-uc1-ext-docker/gitlab.com/plantoncode/planton/pcs/lib/mod/planton-cloud-kube-agent:v0.0.5
 company: example-planton-cloud-company-id
 hostingEnvId: example-planton-cloud-hosting-env-id
 clientId: example-planton-cloud-service-client-id
 clientSecret: example-planton-cloud-service-client-secret>
 plantonCloudServiceApiEndpoint: api.prod.planton.cloud:443
-openCostApiEndpoint: http://kubecost-cost-analyzer.kubecost:9093
+openCostApiEndpoint: http://kubecost-cost-analyzer.kubecost:9003
 openCostPollingIntervalSeconds: 60
 tokenExpirationBufferMinutes: 5
 tokenExpirationCheckIntervalSeconds: 60
+logLevel: info
