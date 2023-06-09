@@ -6,20 +6,20 @@ metadata:
   labels:
     app: planton-cloud-kube-agent
     company: {{ .Values.company }}
-    hosting-env-id: {{ .Values.hostingEnvId }}
+    hosting-env-id: {{ .Values.hostingClusterId }}
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: planton-cloud-kube-agent
       company: {{ .Values.company }}
-      hosting-env-id: {{ .Values.hostingEnvId }}
+      hosting-env-id: {{ .Values.hostingClusterId }}
   template:
     metadata:
       labels:
         app: planton-cloud-kube-agent
         company: {{ .Values.company }}
-        hosting-env-id: {{ .Values.hostingEnvId }}
+        hosting-env-id: {{ .Values.hostingClusterId }}
     spec:
       containers:
       - name: planton-cloud-kube-agent
@@ -27,15 +27,15 @@ spec:
         ports:
         - containerPort: 8080
         env:
-          - name: PLANTON_CLOUD_KUBE_AGENT_CLIENT_ID
+          - name: PLANTON_CLOUD_KUBE_AGENT_MACHINE_ACCOUNT_EMAIL
             value: {{ .Values.clientId }}
           - name: PLANTON_CLOUD_KUBE_AGENT_CLIENT_SECRET
             valueFrom:
               secretKeyRef:
                 name: planton-cloud-machine-account
                 key: client-secret
-          - name: PLANTON_CLOUD_KUBE_AGENT_HOSTING_ENV_ID
-            value: {{ .Values.hostingEnvId }}
+          - name: PLANTON_CLOUD_KUBE_AGENT_HOSTING_CLUSTER_ID
+            value: {{ .Values.hostingClusterId }}
           - name: PLANTON_CLOUD_SERVICE_API_ENDPOINT
             value: {{ .Values.plantonCloudServiceApiEndpoint }}
           - name: OPEN_COST_API_ENDPOINT
