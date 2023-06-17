@@ -8,6 +8,6 @@ entries:
       name: planton-cloud-kube-agent
       type: application
       urls:
-        - https://github.com/plantoncloud/helm-charts/releases/download/v0.0.6/planton-cloud-kube-agent-v0.0.6.tgz
-      version: v0.0.6
+        - https://github.com/plantoncloud/helm-charts/releases/download/v0.0.7/planton-cloud-kube-agent-v0.0.7.tgz
+      version: v0.0.7
 generated: "2022-12-01T15:41:46.96673-07:00"

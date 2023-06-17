@@ -28,7 +28,7 @@ spec:
         - containerPort: 8080
         env:
           - name: PLANTON_CLOUD_KUBE_AGENT_MACHINE_ACCOUNT_EMAIL
-            value: {{ .Values.clientId }}
+            value: {{ .Values.machineAccountEmail }}
           - name: PLANTON_CLOUD_KUBE_AGENT_CLIENT_SECRET
             valueFrom:
               secretKeyRef:
